@@ -1,0 +1,26 @@
+server:
+    port: 8082
+    servlet:
+      context-path: /
+security:
+  oauth2:
+    client:
+      clientId: client2
+      clientSecret: secret
+      accessTokenUri: http://localhost:8000/oauth/token
+      userAuthorizationUri: http://localhost:8000/oauth/authorize
+    resource:
+      userInfoUri: http://localhost:8000/other
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false 
+  devtools:
+    livereload:
+      #热部署生效
+      enabled: true
+      #设置重启的目录
+      additional-paths: resources/**,static/**,templates/**
+      #该目录下的内容修改不重启
+      exclude: data/**     
